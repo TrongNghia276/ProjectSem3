@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/huynguyen/databases/ProjectSem3",
+      "type": "mssql.azure",
+      "connectionId": "huynguyen.database.windows.net",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

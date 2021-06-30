@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Sem3Project.Models.CategoryChild>
+<ul class="dropdown">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="#">@item.CateChild_Name</a>
+            @*<ul class="dropdown">
+                    <li><a href="page-about1.html">@item.CategoriesName</a></li>
+                </ul>*@
+        </li>
+    }
+</ul>

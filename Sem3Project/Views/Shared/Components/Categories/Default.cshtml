@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Sem3Project.Models.Categories>
+<ul class="dropdown">
+    @foreach (var item in Model)
+    {
+        <li>
+            @if (item.CategoriesID == 202)
+            {
+                <a href="@Url.Action("Index", "Medicines")">@item.CategoriesName</a>
+                @await Component.InvokeAsync("CategoryChild")
+            }
+            @if (item.CategoriesID == 203)
+            {
+                <a href="@Url.Action("Index", "MedicalEquipments")">@item.CategoriesName</a>
+                @await Component.InvokeAsync("CategoryChildME")
+            }
+        </li>
+    }
+</ul>

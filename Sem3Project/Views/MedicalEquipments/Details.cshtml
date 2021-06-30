@@ -1,0 +1,96 @@
+﻿@model Sem3Project.Models.MedicalEquipments
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="https://www.indiansinkuwait.com/NewsFile/51202019855613medicin.jpg">
+    <div class="container pt-60 pb-60">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <h2 class="title">@Html.DisplayFor(model => model.EquipName)</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Details -->
+<section class="">
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-sx-12 col-sm-4 col-md-4">
+                    <div class="doctor-thumb">
+                        <img src="~/images/Medicines/@Html.DisplayFor(model => model.EquipImage)" alt="">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 pl-60 pl-sm-15">
+                    <div>
+                        <h2 class="text-uppercase">@Html.DisplayFor(model => model.EquipName)</h2>
+                        <h5>Price: @Html.DisplayFor(model => model.EquipPrice)</h5>
+                        <p>Status : @Html.DisplayFor(model => model.EquipStatus)</p>
+                        <p>SKU : @Html.DisplayFor(model => model.EquipSKU)</p>
+                        <p>Tag : @Html.DisplayFor(model => model.EquipTag)</p>
+                        <hr>
+                        <p class="lead">@Html.DisplayFor(model => model.EquipDescription)</p>
+                        <div class="btn-add-to-cart-wrapper">
+                            <a class="btn btn-default btn-xs btn-add-to-cart" href="#">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-30">
+                <h4>Client's Feedback</h4>
+                <div class="owl-carousel-1col" data-dots="true">
+                    <div class="item">
+                        <div class="testimonial style1">
+                            <div class="comment">
+                                <p class="text-gray">Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis.</p>
+                            </div>
+                            <div class="content mt-20">
+                                <div class="thumb pull-left flip"> <img class="img-circle" alt="" src="~/images/testimonials/s1.jpg"> </div>
+                                <div class="text-right flip pull-right flip mr-20 mt-10">
+                                    <h5 class="author text-theme-colored">Jonathan Smith</h5>
+                                    <h6 class="title">cici inc.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial style1">
+                            <div class="comment">
+                                <p class="text-gray">Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis.</p>
+                            </div>
+                            <div class="content mt-20">
+                                <div class="thumb pull-left flip"> <img class="img-circle" alt="" src="~/images/testimonials/s1.jpg"> </div>
+                                <div class="text-right flip pull-right flip mr-20 mt-10">
+                                    <h5 class="author text-theme-colored">Jonathan Smith</h5>
+                                    <h6 class="title">cici inc.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial style1">
+                            <div class="comment">
+                                <p class="text-gray">Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis.</p>
+                            </div>
+                            <div class="content mt-20">
+                                <div class="thumb pull-left flip"> <img class="img-circle" alt="" src="~/images/testimonials/s1.jpg"> </div>
+                                <div class="text-right flip pull-right flip mr-20 mt-10">
+                                    <h5 class="author text-theme-colored">Jonathan Smith</h5>
+                                    <h6 class="title">cici inc.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

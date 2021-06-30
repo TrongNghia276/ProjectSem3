@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Sem3Project.Models.MedicalEquipments>
+@foreach (var item in Model)
+{
+    <div class="col-sm-6 col-md-4 col-lg-4 mb-30">
+        <div class="product">
+            <div class="product-thumb">
+                <img alt="" src="~/images/MedicalEquipments/@item.EquipImage" class="img-responsive img-fullwidth">
+                <div class="overlay"></div>
+            </div>
+            <div class="product-details text-center">
+                <a href="#"><h5 class="product-title">@item.EquipName</h5></a>
+                @*<div class="star-rating" title="Rated 4.00 out of 5"><span data-width="80%">4.00</span></div>*@
+                <div class="price"><span class="amount">@item.EquipPrice</span></div>
+                <div class="btn-add-to-cart-wrapper">
+                    <a class="btn btn-default btn-xs btn-add-to-cart" href="#">Add To Cart</a>
+                    <a class="btn-read-more" href="@Url.Action("Details","MedicalEquipments", new { id = item.Medi_Equip_ID})">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

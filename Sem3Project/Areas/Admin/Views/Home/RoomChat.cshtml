@@ -1,0 +1,42 @@
+﻿@{ ViewData["Title"] = "RoomChat";
+
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<div class="row">
+    <div class="col-3"></div>
+    <div class="card card-primary card-outline direct-chat direct-chat-primary col-6">
+        <div class="card-header">
+            <h3 class="card-title">Room Chat</h3>
+
+            <div class="card-tools">
+                <input type="hidden" id="userInput" value="@HttpContextAccessor.HttpContext.Session.GetString("_FirstName") @HttpContextAccessor.HttpContext.Session.GetString("_LastName")" />
+                <input type="hidden" id="userInputImage" value="/Image/Acc_Avatar/@HttpContextAccessor.HttpContext.Session.GetString("_Image")" />
+              
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+              
+          
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="direct-chat-messages" id="messagesList">
+
+            </div>
+
+        </div>
+        <div class="card-footer">
+            <div class="input-group">
+
+                <input type="text" id="messageInput" name="message" placeholder="Type Message ..." class="form-control">
+                <span class="input-group-append">
+                    <button type="submit" id="sendButton" class="btn btn-primary">Send</button>
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

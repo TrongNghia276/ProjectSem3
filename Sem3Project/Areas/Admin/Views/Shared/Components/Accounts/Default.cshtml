@@ -1,0 +1,146 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model IEnumerable<Sem3Project.Areas.Admin.Models.Accounts>
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @item.AccountID
+    </td>
+
+    <td>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <img alt="Avatar" class="table-avatar" src="~/Image/Acc_Avatar/@item.Image">
+            </li>
+
+        </ul>
+    </td>
+    <td>
+
+        @item.FirstName @item.LastName
+
+
+    </td>
+    <td class="project-state">
+        <span class="badge badge-success">@item.AccountLock</span>
+    </td>
+    <td class="project-state">
+        <span class="badge badge-success">@item.Role</span>
+    </td>
+
+    @{
+        string Role = HttpContextAccessor.HttpContext.Session.GetString("_Role");
+
+
+        string _Role = Role.ToUpper();
+        if (_Role.Equals("ADMIN"))
+        { 
+        <td class="project-actions text-right">
+            @{ string ARole = item.Role;
+            string _ARole = ARole.ToUpper();
+
+            if (_ARole.Equals("ADMIN"))
+            {
+
+            }
+            else
+            {
+            if (item.AccountLock == true)
+            {
+            <a style="width: 30%" onclick="showInPopup('@Url.Action("Unlock","Account", new { id = item.AccountID },Context.Request.Scheme)','UnLock')" class="btn btn-danger btn-sm">
+                <i class="fas fa-lock-open">
+                </i>
+                Unlock
+            </a>
+            }
+            else
+            {
+            <a style="width: 30%" onclick="showInPopup('@Url.Action("Lock","Account", new { id = item.AccountID },Context.Request.Scheme)','Lock')" class="btn btn-danger btn-sm">
+                <i class="fas fa-lock">
+                </i>
+                Lock
+            </a>
+            }
+            }
+            }
+            <a style="width: 30%" class="btn btn-primary btn-sm" href="@Url.Action("View","Account", new { id = item.AccountID })">
+                <i class="fas fa-eye">
+                </i>
+                View
+            </a>
+            <a style="width: 30%" class="btn btn-info btn-sm" href="@Url.Action("Edit","Account", new { id = item.AccountID })">
+                <i class="fas fa-pencil-alt">
+                </i>
+                Edit
+            </a>
+
+
+
+        </td>
+    }
+    if (_Role.Equals("EDITOR"))
+    {
+<td class="project-actions text-right">
+    @{ string ARole = item.Role;
+        string _ARole = ARole.ToUpper();
+
+        if (_ARole.Equals("ADMIN")||_ARole.Equals("EDITOR"))
+        {
+
+        }
+        else
+        {
+            if (item.AccountLock == true)
+            {
+                <a style="width: 30%" onclick="showInPopup('@Url.Action("Unlock","Account", new { id = item.AccountID },Context.Request.Scheme)','UnLock')" class="btn btn-danger btn-sm">
+                    <i class="fas fa-lock-open">
+                    </i>
+                    Unlock
+                </a>
+            }
+            else
+            {
+                <a style="width: 30%" onclick="showInPopup('@Url.Action("Lock","Account", new { id = item.AccountID },Context.Request.Scheme)','Lock')" class="btn btn-danger btn-sm">
+                    <i class="fas fa-lock">
+                    </i>
+                    Lock
+                </a>
+            }
+        }
+    }
+    @{ string BRole = item.Role;
+        string _BRole = BRole.ToUpper();
+
+        if (_BRole.Equals("ADMIN") || _BRole.Equals("EDITOR"))
+        {
+
+        }
+        else
+        { <a style="width: 30%" class="btn btn-primary btn-sm" href="@Url.Action("View","Account", new { id = item.AccountID })">
+                <i class="fas fa-eye">
+                </i>
+                View
+            </a>
+            <a style="width: 30%" class="btn btn-info btn-sm" href="@Url.Action("Edit","Account", new { id = item.AccountID })">
+                <i class="fas fa-pencil-alt">
+                </i>
+                Edit
+            </a>
+
+        }
+    }
+
+
+
+
+
+
+</td>
+    }
+
+
+    }
+
+</tr>
+}

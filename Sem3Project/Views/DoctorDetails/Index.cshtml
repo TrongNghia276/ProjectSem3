@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/WebLayout.cshtml";
+}
+
+<section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="~/images/bg/bg4.jpg">
+    <div class="container pt-60 pb-60">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <h2 class="title">Doctors</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Doctors -->
+<section>
+    <div class="container pb-40">
+        <div class="section-content">
+            <div class="row multi-row-clearfix">
+                @await Component.InvokeAsync("Accounts")
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Divider: Funfact -->
+<section class="divider parallax layer-overlay overlay-white-6" data-bg-img="~/images/bg/bg4.jpg">
+    <div class="container pt-20 pb-20">
+        <div class="pt-40 pb-40">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                    <div class="funfact text-center">
+                        <a href="#"> <i class="fa fa-calendar text-theme-colored font-36"></i></a>
+                        <h5 class="animate-number font-36" data-value="8" data-animation-duration="2500">0</h5>
+                        <p class="title">Years of Experience</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                    <div class="funfact text-center">
+                        <a href="#"> <i class="fa fa-user text-theme-colored font-36"></i></a>
+                        <h5 class="animate-number font-36" data-value="1921" data-animation-duration="2500">0</h5>
+                        <p class="title">Patients treated per year</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                    <div class="funfact text-center">
+                        <a href="#"> <i class="fa fa-globe text-theme-colored font-36"></i></a>
+                        <h5 class="animate-number font-36" data-value="25" data-animation-duration="2500">0</h5>
+                        <p class="title">Countries Worldwide</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                    <div class="funfact text-center">
+                        <a href="#"> <i class="fa fa-trophy text-theme-colored font-36"></i></a>
+                        <h5 class="animate-number font-36" data-value="12" data-animation-duration="2500">0</h5>
+                        <p class="title">Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

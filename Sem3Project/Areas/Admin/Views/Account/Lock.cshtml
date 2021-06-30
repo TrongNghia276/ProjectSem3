@@ -1,0 +1,65 @@
+﻿@model Sem3Project.Areas.Admin.Models.Accounts
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Unlock";
+    Layout = null;
+
+}
+
+<form asp-action="Lock" asp-controller="Account" onsubmit="return jQueryAjaxPost(this);">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="card card-primary">
+
+        <div>
+            @Html.HiddenFor(model => model.AccountHistory)
+            @Html.HiddenFor(model => model.AccountID)
+            @Html.HiddenFor(model => model.AccountName)
+            @Html.HiddenFor(model => model.Active)
+            @Html.HiddenFor(model => model.CheckPassword)
+
+            @Html.HiddenFor(model => model.AccountLock)
+            @Html.HiddenFor(model => model.City)
+
+            @Html.HiddenFor(model => model.Country)
+
+            @Html.HiddenFor(model => model.District)
+
+            @Html.HiddenFor(model => model.DoB)
+
+            @Html.HiddenFor(model => model.Email)
+
+            @Html.HiddenFor(model => model.FirstName)
+
+            @Html.HiddenFor(model => model.Image)
+
+            @Html.HiddenFor(model => model.LastName)
+
+            @Html.HiddenFor(model => model.Password)
+
+            @Html.HiddenFor(model => model.Phone)
+            @Html.HiddenFor(model => model.Role)
+            @Html.HiddenFor(model => model.State)
+            @Html.HiddenFor(model => model.Street)
+            @Html.HiddenFor(model => model.Zipcode)
+        </div>
+        <label>Confirm account Lock @Html.DisplayTextFor(model => model.FirstName) @Html.DisplayTextFor(model => model.LastName)</label>
+
+        <form>
+            <div class="modal-footer">
+                <button onclick="$('#form-modal').modal('hide');" id="hidemodal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Lock</button>
+            </div>
+            <!-- /.card-body -->
+
+        </form>
+    </div>
+
+
+    <div>
+        <h3 style="color: red">@ViewBag.Msg</h3>
+    </div>
+
+</form>
+
+
